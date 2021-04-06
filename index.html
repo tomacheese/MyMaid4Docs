@@ -1,0 +1,2142 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MyMaid4プラグイン ドキュメント</title>
+
+    <link href="images/favicon-65f22ff9.ico" rel="icon" type="image/ico" />
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;plaintext&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-5931ce1e.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="plaintext">Minecraft Command</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#commands" class="toc-h1 toc-link" data-title="Commands">Commands</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#commands-brb" class="toc-h2 toc-link" data-title="brb">brb</a>
+                  </li>
+                  <li>
+                    <a href="#commands-chat" class="toc-h2 toc-link" data-title="chat">chat</a>
+                  </li>
+                  <li>
+                    <a href="#commands-chatban" class="toc-h2 toc-link" data-title="chatban">chatban</a>
+                  </li>
+                  <li>
+                    <a href="#commands-cmdb" class="toc-h2 toc-link" data-title="cmdb">cmdb</a>
+                  </li>
+                  <li>
+                    <a href="#commands-ded" class="toc-h2 toc-link" data-title="ded">ded</a>
+                  </li>
+                  <li>
+                    <a href="#commands-dedbull" class="toc-h2 toc-link" data-title="dedbull">dedbull</a>
+                  </li>
+                  <li>
+                    <a href="#commands-delhome" class="toc-h2 toc-link" data-title="delhome">delhome</a>
+                  </li>
+                  <li>
+                    <a href="#commands-discordlink" class="toc-h2 toc-link" data-title="discordlink">discordlink</a>
+                  </li>
+                  <li>
+                    <a href="#commands-dt" class="toc-h2 toc-link" data-title="dt">dt</a>
+                  </li>
+                  <li>
+                    <a href="#commands-eban" class="toc-h2 toc-link" data-title="eban">eban</a>
+                  </li>
+                  <li>
+                    <a href="#commands-elytra" class="toc-h2 toc-link" data-title="elytra">elytra</a>
+                  </li>
+                  <li>
+                    <a href="#commands-g" class="toc-h2 toc-link" data-title="g">g</a>
+                  </li>
+                  <li>
+                    <a href="#commands-getlookloc" class="toc-h2 toc-link" data-title="getlookloc">getlookloc</a>
+                  </li>
+                  <li>
+                    <a href="#commands-getuserkey" class="toc-h2 toc-link" data-title="getuserkey">getuserkey</a>
+                  </li>
+                  <li>
+                    <a href="#commands-glookup" class="toc-h2 toc-link" data-title="glookup">glookup</a>
+                  </li>
+                  <li>
+                    <a href="#commands-hat" class="toc-h2 toc-link" data-title="hat">hat</a>
+                  </li>
+                  <li>
+                    <a href="#commands-head" class="toc-h2 toc-link" data-title="head">head</a>
+                  </li>
+                  <li>
+                    <a href="#commands-hide" class="toc-h2 toc-link" data-title="hide">hide</a>
+                  </li>
+                  <li>
+                    <a href="#commands-history" class="toc-h2 toc-link" data-title="history">history</a>
+                  </li>
+                  <li>
+                    <a href="#commands-home" class="toc-h2 toc-link" data-title="home">home</a>
+                  </li>
+                  <li>
+                    <a href="#commands-jail" class="toc-h2 toc-link" data-title="jail">jail</a>
+                  </li>
+                  <li>
+                    <a href="#commands-link" class="toc-h2 toc-link" data-title="link">link</a>
+                  </li>
+                  <li>
+                    <a href="#commands-logintext" class="toc-h2 toc-link" data-title="logintext">logintext</a>
+                  </li>
+                  <li>
+                    <a href="#commands-looking" class="toc-h2 toc-link" data-title="looking">looking</a>
+                  </li>
+                  <li>
+                    <a href="#commands-pigeon" class="toc-h2 toc-link" data-title="pigeon">pigeon</a>
+                  </li>
+                  <li>
+                    <a href="#commands-player" class="toc-h2 toc-link" data-title="player">player</a>
+                  </li>
+                  <li>
+                    <a href="#commands-selclick" class="toc-h2 toc-link" data-title="selclick">selclick</a>
+                  </li>
+                  <li>
+                    <a href="#commands-sethome" class="toc-h2 toc-link" data-title="sethome">sethome</a>
+                  </li>
+                  <li>
+                    <a href="#commands-show" class="toc-h2 toc-link" data-title="show">show</a>
+                  </li>
+                  <li>
+                    <a href="#commands-skkcolor" class="toc-h2 toc-link" data-title="skkcolor">skkcolor</a>
+                  </li>
+                  <li>
+                    <a href="#commands-spawn" class="toc-h2 toc-link" data-title="spawn">spawn</a>
+                  </li>
+                  <li>
+                    <a href="#commands-tempmute" class="toc-h2 toc-link" data-title="tempmute">tempmute</a>
+                  </li>
+                  <li>
+                    <a href="#commands-test" class="toc-h2 toc-link" data-title="test">test</a>
+                  </li>
+                  <li>
+                    <a href="#commands-testment" class="toc-h2 toc-link" data-title="testment">testment</a>
+                  </li>
+                  <li>
+                    <a href="#commands-wt" class="toc-h2 toc-link" data-title="wt">wt</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#events" class="toc-h1 toc-link" data-title="Events">Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#events-wt-event_antilogincmd" class="toc-h2 toc-link" data-title="Event_AntiLoginCmd">Event_AntiLoginCmd</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_antiproblemcommand" class="toc-h2 toc-link" data-title="Event_AntiProblemCommand">Event_AntiProblemCommand</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_antiproblemteleport" class="toc-h2 toc-link" data-title="Event_AntiProblemTeleport">Event_AntiProblemTeleport</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_antitargetallentitycmd" class="toc-h2 toc-link" data-title="Event_AntiTargetAllEntityCmd">Event_AntiTargetAllEntityCmd</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_antiteleporttonewplayers" class="toc-h2 toc-link" data-title="Event_AntiTeleportToNewPlayers">Event_AntiTeleportToNewPlayers</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_antiteleporttospectator" class="toc-h2 toc-link" data-title="Event_AntiTeleportToSpectator">Event_AntiTeleportToSpectator</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_antiwither" class="toc-h2 toc-link" data-title="Event_AntiWither">Event_AntiWither</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_antijaoium" class="toc-h2 toc-link" data-title="Event_Antijaoium">Event_Antijaoium</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_chatban" class="toc-h2 toc-link" data-title="Event_ChatBan">Event_ChatBan</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_clearselection" class="toc-h2 toc-link" data-title="Event_ClearSelection">Event_ClearSelection</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_cmdlengthlimiter" class="toc-h2 toc-link" data-title="Event_CmdLengthLimiter">Event_CmdLengthLimiter</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_commandsendam" class="toc-h2 toc-link" data-title="Event_CommandSendAM">Event_CommandSendAM</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_customjoinmessage" class="toc-h2 toc-link" data-title="Event_CustomJoinMessage">Event_CustomJoinMessage</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_dvnotspectator" class="toc-h2 toc-link" data-title="Event_DVNotSpectator">Event_DVNotSpectator</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_ded" class="toc-h2 toc-link" data-title="Event_Ded">Event_Ded</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_disableconcretetransition" class="toc-h2 toc-link" data-title="Event_DisableConcreteTransition">Event_DisableConcreteTransition</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_disablecoraltransition" class="toc-h2 toc-link" data-title="Event_DisableCoralTransition">Event_DisableCoralTransition</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_disablerespawnanchor" class="toc-h2 toc-link" data-title="Event_DisableRespawnAnchor">Event_DisableRespawnAnchor</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_eban" class="toc-h2 toc-link" data-title="Event_EBan">Event_EBan</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_explosion" class="toc-h2 toc-link" data-title="Event_Explosion">Event_Explosion</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_firstlogin" class="toc-h2 toc-link" data-title="Event_FirstLogin">Event_FirstLogin</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_hide" class="toc-h2 toc-link" data-title="Event_Hide">Event_Hide</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_history" class="toc-h2 toc-link" data-title="Event_History">Event_History</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_jail" class="toc-h2 toc-link" data-title="Event_Jail">Event_Jail</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_loginsuccessful" class="toc-h2 toc-link" data-title="Event_LoginSuccessful">Event_LoginSuccessful</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_looking" class="toc-h2 toc-link" data-title="Event_Looking">Event_Looking</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_mcbanslogincheck" class="toc-h2 toc-link" data-title="Event_MCBansLoginCheck">Event_MCBansLoginCheck</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_newplayerautoblmap" class="toc-h2 toc-link" data-title="Event_NewPlayerAutoBlMap">Event_NewPlayerAutoBlMap</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_playercheckprelogin" class="toc-h2 toc-link" data-title="Event_PlayerCheckPreLogin">Event_PlayerCheckPreLogin</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_protectionsandbox" class="toc-h2 toc-link" data-title="Event_ProtectionSandBox">Event_ProtectionSandBox</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_skkcolor" class="toc-h2 toc-link" data-title="Event_SKKColor">Event_SKKColor</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_teleportcmd" class="toc-h2 toc-link" data-title="Event_TeleportCmd">Event_TeleportCmd</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_tempmute" class="toc-h2 toc-link" data-title="Event_TempMute">Event_TempMute</a>
+                  </li>
+                  <li>
+                    <a href="#events-wt-event_vote" class="toc-h2 toc-link" data-title="Event_Vote">Event_Vote</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://jaoafa.com'>jao Minecraft Server</a></li>
+            <li><a href='https://github.com/jaoafa/MyMaid4'>MyMaid4 GitHub Repository</a></li>
+            <li><a href='https://github.com/tomacheese/MyMaid4Docs'>MyMaid4Docs GitHub Repository</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p><code>MyMaid4</code> のドキュメントへようこそ。<code>MyMaid4</code> とは、 <a href="https://jaoafa.com">jao Minecraft Server</a> 独自の PaperMC プラグインです。</p>
+
+<p>新しいコマンド・機能の要望、不具合の報告などは <a href="https://forms.gle/EZGVhKdbryfW5fCm8">開発部リクエストボックス</a> か <a href="https://github.com/jaoafa/MyMaid4/issues">MyMaid4 の Issue</a> へお願いします。</p>
+<ul>
+<li>Version: 2021.04.06_17.46_2f29388</li>
+</ul>
+<h1 id='commands'>Commands</h1>
+<p>MyMaid4 で実装されているコマンドの一覧です。</p>
+
+<ul>
+<li><code>&lt;</code> と <code>&gt;</code> で囲われているものは <strong>必須の引数</strong> です。</li>
+<li><code>[</code> と <code>]</code> で囲われているものは <strong>任意の引数</strong> です。</li>
+</ul>
+
+<p>例: <code>/g &lt;gamemode&gt; [player]</code> の場合、<code>/g 1</code> と <code>/g 1 X4Z</code> が利用できます。</p>
+<h2 id='commands-brb'>brb</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/brb
+/brb &lt;player&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Brb.java">com.jaoafa.mymaid4.command.Cmd_Brb</a></p>
+</blockquote>
+
+<p>バリアブロックを入手します。</p>
+<h3 id='commands-brb-brb'><code>/brb</code></h3>
+<p>バリアブロックをコマンド実行者のメインハンドのアイテムと置き換えます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-brb-brb-lt-player-gt'><code>/brb &lt;player&gt;</code></h3>
+<p>バリアブロックを指定したプレイヤーのメインハンドのアイテムと置き換えます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>PlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-chat'>chat</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/chat &lt;player&gt; &lt;message&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Chat.java">com.jaoafa.mymaid4.command.Cmd_Chat</a></p>
+</blockquote>
+
+<p>偽のプレイヤーに喋らせます。</p>
+<h3 id='commands-chat-chat-lt-player-gt-lt-message-gt'><code>/chat &lt;player&gt; &lt;message&gt;</code></h3>
+<p>偽のプレイヤーに喋らせます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-chatban'>chatban</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/chatban add &lt;player&gt; &lt;reason&gt;
+/chatban remove &lt;player&gt;
+/chatban status [player]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_ChatBan.java">com.jaoafa.mymaid4.command.Cmd_ChatBan</a></p>
+</blockquote>
+
+<p>ChatBanに関する処理を行います。</p>
+<h3 id='commands-chatban-chatban-add-lt-player-gt-lt-reason-gt'><code>/chatban add &lt;player&gt; &lt;reason&gt;</code></h3>
+<p>ターゲットをChatBanします。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-chatban-chatban-remove-lt-player-gt'><code>/chatban remove &lt;player&gt;</code></h3>
+<p>ターゲットのChatBanを解除します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-chatban-chatban-status-player'><code>/chatban status [player]</code></h3>
+<p>ChatBan一覧を表示します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-cmdb'>cmdb</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/cmdb
+/cmdb &lt;player&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Cmdb.java">com.jaoafa.mymaid4.command.Cmd_Cmdb</a></p>
+</blockquote>
+
+<p>コマンドブロックを入手します。</p>
+<h3 id='commands-cmdb-cmdb'><code>/cmdb</code></h3>
+<p>コマンドブロックをコマンド実行者のメインハンドのアイテムと置き換えます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-cmdb-cmdb-lt-player-gt'><code>/cmdb &lt;player&gt;</code></h3>
+<p>コマンドブロックを指定したプレイヤーのメインハンドのアイテムと置き換えます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>PlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-ded'>ded</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/ded
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Ded.java">com.jaoafa.mymaid4.command.Cmd_Ded</a></p>
+</blockquote>
+
+<p>最後に死亡した場所にテレポートします。</p>
+<h3 id='commands-ded-ded'><code>/ded</code></h3>
+<p>最後に死亡した場所にテレポートします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-dedbull'>dedbull</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/dedbull
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Dedbull.java">com.jaoafa.mymaid4.command.Cmd_Dedbull</a></p>
+</blockquote>
+
+<p>プレイヤーに暗視効果を付与します。すでに付与されている場合は削除します。</p>
+<h3 id='commands-dedbull-dedbull'><code>/dedbull</code></h3>
+<p>プレイヤーに暗視効果を付与します。すでに付与されている場合は削除します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-delhome'>delhome</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/delhome
+/delhome [name]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_DelHome.java">com.jaoafa.mymaid4.command.Cmd_DelHome</a></p>
+</blockquote>
+
+<p>ホームを削除します。</p>
+
+<ul>
+<li>エイリアスがあります: <code>removehome, remhome</code></li>
+</ul>
+<h3 id='commands-delhome-delhome'><code>/delhome</code></h3>
+<p>デフォルトホームを削除します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-delhome-delhome-name'><code>/delhome [name]</code></h3>
+<p>指定された名前のホームを削除します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>StringArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-discordlink'>discordlink</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/discordlink &lt;authKey&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_DiscordLink.java">com.jaoafa.mymaid4.command.Cmd_DiscordLink</a></p>
+</blockquote>
+
+<p>DiscordアカウントとMinecraftアカウントを紐づけます。</p>
+<h3 id='commands-discordlink-discordlink-lt-authkey-gt'><code>/discordlink &lt;authKey&gt;</code></h3>
+<p>DiscordアカウントとMinecraftアカウントを紐づけます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>authKey</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-dt'>dt</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/dt &lt;markerName&gt;
+/dt add &lt;markerName&gt; &lt;markerType&gt; [markerIcon]
+/dt del &lt;markerName&gt;
+/dt random
+/dt near
+/dt list [page]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_DT.java">com.jaoafa.mymaid4.command.Cmd_DT</a></p>
+</blockquote>
+
+<p>DynmapのMarkerを編集・テレポートします。</p>
+<h3 id='commands-dt-dt-lt-markername-gt'><code>/dt &lt;markerName&gt;</code></h3>
+<p>マーカーにテレポートさせます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>markerName</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-dt-dt-add-lt-markername-gt-lt-markertype-gt-markericon'><code>/dt add &lt;markerName&gt; &lt;markerType&gt; [markerIcon]</code></h3>
+<p>マーカーを追加します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>markerName</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>markerType</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>markerIcon</code></td>
+<td>StringArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-dt-dt-del-lt-markername-gt'><code>/dt del &lt;markerName&gt;</code></h3>
+<p>マーカーを削除します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>markerName</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-dt-dt-random'><code>/dt random</code></h3>
+<p>ランダムに選ばれたマーカーにテレポートします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-dt-dt-near'><code>/dt near</code></h3>
+<p>近くのマーカーを表示します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-dt-dt-list-page'><code>/dt list [page]</code></h3>
+<p>マーカーの一覧を表示します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>page</code></td>
+<td>IntegerArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-eban'>eban</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/eban add &lt;player&gt; &lt;reason&gt;
+/eban remove &lt;player&gt;
+/eban status [player]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_EBan.java">com.jaoafa.mymaid4.command.Cmd_EBan</a></p>
+</blockquote>
+
+<p>EBanに関する処理を行います。</p>
+<h3 id='commands-eban-eban-add-lt-player-gt-lt-reason-gt'><code>/eban add &lt;player&gt; &lt;reason&gt;</code></h3>
+<p>ターゲットをEBanします。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-eban-eban-remove-lt-player-gt'><code>/eban remove &lt;player&gt;</code></h3>
+<p>ターゲットのEBanを解除します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-eban-eban-status-player'><code>/eban status [player]</code></h3>
+<p>EBan一覧を表示します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-elytra'>elytra</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/elytra
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Elytra.java">com.jaoafa.mymaid4.command.Cmd_Elytra</a></p>
+</blockquote>
+
+<p>プレイヤーにエリトラと花火を付与します。</p>
+<h3 id='commands-elytra-elytra'><code>/elytra</code></h3>
+<p>プレイヤーにエリトラと花火を付与します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-g'>g</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/g
+/g &lt;gamemode&gt;
+/g &lt;gamemode&gt; &lt;player&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_G.java">com.jaoafa.mymaid4.command.Cmd_G</a></p>
+</blockquote>
+
+<p>ゲームモードを変更します。</p>
+<h3 id='commands-g-g'><code>/g</code></h3>
+<p>ゲームモードを切り替えます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-g-g-lt-gamemode-gt'><code>/g &lt;gamemode&gt;</code></h3>
+<p>指定されたゲームモードに切り替えます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>gamemode</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-g-g-lt-gamemode-gt-lt-player-gt'><code>/g &lt;gamemode&gt; &lt;player&gt;</code></h3>
+<p>指定されたプレイヤーのゲームモードを切り替えます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>gamemode</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>player</code></td>
+<td>PlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-getlookloc'>getlookloc</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/getlookloc
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Getlookloc.java">com.jaoafa.mymaid4.command.Cmd_Getlookloc</a></p>
+</blockquote>
+
+<p>見ているブロックの座標を提案します。</p>
+<h3 id='commands-getlookloc-getlookloc'><code>/getlookloc</code></h3>
+<p>見ているブロックの座標を提案します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-getuserkey'>getuserkey</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/getuserkey
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_GetUserKey.java">com.jaoafa.mymaid4.command.Cmd_GetUserKey</a></p>
+</blockquote>
+
+<p>ユーザーを認証するためのキー(ユーザーキー)に関する操作を行います。</p>
+<h3 id='commands-getuserkey-getuserkey'><code>/getuserkey</code></h3>
+<p>ユーザーキーを生成し、表示します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-glookup'>glookup</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/glookup &lt;player&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Glookup.java">com.jaoafa.mymaid4.command.Cmd_Glookup</a></p>
+</blockquote>
+
+<p>他人のゲームモードを確認します。</p>
+<h3 id='commands-glookup-glookup-lt-player-gt'><code>/glookup &lt;player&gt;</code></h3>
+<p>他人のゲームモードを確認します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>PlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-hat'>hat</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/hat
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Hat.java">com.jaoafa.mymaid4.command.Cmd_Hat</a></p>
+</blockquote>
+
+<p>手に持っているアイテムを頭に載せます。</p>
+<h3 id='commands-hat-hat'><code>/hat</code></h3>
+<p>手に持っているアイテムを頭に載せます。</p>
+<h2 id='commands-head'>head</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/head
+/head &lt;player&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Head.java">com.jaoafa.mymaid4.command.Cmd_Head</a></p>
+</blockquote>
+
+<p>頭ブロックを入手します。</p>
+<h3 id='commands-head-head'><code>/head</code></h3>
+<p>自分の頭ブロックを入手します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-head-head-lt-player-gt'><code>/head &lt;player&gt;</code></h3>
+<p>指定したプレイヤーの頭ブロックを入手します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-hide'>hide</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/hide
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Hide.java">com.jaoafa.mymaid4.command.Cmd_Hide</a></p>
+</blockquote>
+
+<p>他のプレイヤーから姿を隠します。</p>
+<h3 id='commands-hide-hide'><code>/hide</code></h3>
+<p>他のプレイヤーから姿を隠します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-history'>history</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/history add &lt;target&gt; &lt;message&gt;
+/history disable &lt;target&gt; &lt;item&gt;
+/history status &lt;target&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_History.java">com.jaoafa.mymaid4.command.Cmd_History</a></p>
+</blockquote>
+
+<p>jaoHistoryに関する操作を行います。</p>
+<h3 id='commands-history-history-add-lt-target-gt-lt-message-gt'><code>/history add &lt;target&gt; &lt;message&gt;</code></h3>
+<p>指定したプレイヤーのjaoHistoryにデータを追加します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>target</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-history-history-disable-lt-target-gt-lt-item-gt'><code>/history disable &lt;target&gt; &lt;item&gt;</code></h3>
+<p>指定したプレイヤーのjaoHistory項目を無効化します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>target</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>item</code></td>
+<td>IntegerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-history-history-status-lt-target-gt'><code>/history status &lt;target&gt;</code></h3>
+<p>指定したプレイヤーのjaoHistory情報を表示します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>target</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-home'>home</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/home
+/home [name]
+/home list [Page]
+/home view [name]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Home.java">com.jaoafa.mymaid4.command.Cmd_Home</a></p>
+</blockquote>
+
+<p>ホームにテレポートします。</p>
+<h3 id='commands-home-home'><code>/home</code></h3>
+<p>デフォルトホームにテレポートします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-home-home-name'><code>/home [name]</code></h3>
+<p>指定された名前のホームにテレポートします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>StringArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-home-home-list-page'><code>/home list [Page]</code></h3>
+<p>ホーム一覧を表示します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Page</code></td>
+<td>IntegerArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-home-home-view-name'><code>/home view [name]</code></h3>
+<p>指定したホームに関する情報を表示します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>StringArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-jail'>jail</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/jail add &lt;player&gt; &lt;reason&gt;
+/jail remove &lt;player&gt;
+/jail status [player]
+/jail testment &lt;message&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Jail.java">com.jaoafa.mymaid4.command.Cmd_Jail</a></p>
+</blockquote>
+
+<p>Jailに関する処理を行います。</p>
+<h3 id='commands-jail-jail-add-lt-player-gt-lt-reason-gt'><code>/jail add &lt;player&gt; &lt;reason&gt;</code></h3>
+<p>ターゲットをJailします。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-jail-jail-remove-lt-player-gt'><code>/jail remove &lt;player&gt;</code></h3>
+<p>ターゲットのJailを解除します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-jail-jail-status-player'><code>/jail status [player]</code></h3>
+<p>Jail一覧を表示します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>OfflinePlayerArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-jail-jail-testment-lt-message-gt'><code>/jail testment &lt;message&gt;</code></h3>
+<p>遺言を記録します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>message</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-link'>link</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/link
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Link.java">com.jaoafa.mymaid4.command.Cmd_Link</a></p>
+</blockquote>
+
+<p>linkコマンドはjMS Gamers Clubで実行するのだ。</p>
+<h3 id='commands-link-link'><code>/link</code></h3>
+<p>linkコマンドはjMS Gamers Clubで実行するのだ。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-logintext'>logintext</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/logintext
+/logintext &lt;loginText&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_LoginText.java">com.jaoafa.mymaid4.command.Cmd_LoginText</a></p>
+</blockquote>
+
+<p>ログイン時に表示されるテキストに任意のテキストを追加します。</p>
+<h3 id='commands-logintext-logintext'><code>/logintext</code></h3>
+<p>ログイン時に表示されるテキストをリセットします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-logintext-logintext-lt-logintext-gt'><code>/logintext &lt;loginText&gt;</code></h3>
+<p>ログイン時に表示されるテキストに任意のテキストを追加します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>loginText</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-looking'>looking</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/looking
+/looking on &lt;target&gt;
+/looking off
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Looking.java">com.jaoafa.mymaid4.command.Cmd_Looking</a></p>
+</blockquote>
+
+<p>プレイヤーを見続けます。</p>
+
+<ul>
+<li>エイリアスがあります: <code>eye, see, look</code></li>
+</ul>
+<h3 id='commands-looking-looking'><code>/looking</code></h3>
+<p>今見ているプレイヤーを見続けはじめます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-looking-looking-on-lt-target-gt'><code>/looking on &lt;target&gt;</code></h3>
+<p>プレイヤーを見続けはじめます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>target</code></td>
+<td>PlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-looking-looking-off'><code>/looking off</code></h3>
+<p>プレイヤーを見続けるのをやめます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-pigeon'>pigeon</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/pigeon speaker add &lt;speaker&gt;
+/pigeon messages add &lt;message&gt;
+/pigeon speaker remove [speaker]
+/pigeon messages remove [message]
+/pigeon speaker list
+/pigeon messages list
+/pigeon broadcast [messageId]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Pigeon.java">com.jaoafa.mymaid4.command.Cmd_Pigeon</a></p>
+</blockquote>
+
+<p>伝書鳩ちゃんにお願いを伝えます。</p>
+
+<ul>
+<li>エイリアスがあります: <code>messenger</code></li>
+</ul>
+<h3 id='commands-pigeon-pigeon-speaker-add-lt-speaker-gt'><code>/pigeon speaker add &lt;speaker&gt;</code></h3>
+<p>伝書鳩ちゃんにスピーカーを追加してもらいます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>speaker</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-pigeon-pigeon-messages-add-lt-message-gt'><code>/pigeon messages add &lt;message&gt;</code></h3>
+<p>伝書鳩ちゃんにメッセージを追加してもらいます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>message</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-pigeon-pigeon-speaker-remove-speaker'><code>/pigeon speaker remove [speaker]</code></h3>
+<p>伝書鳩ちゃんにスピーカーを削除してもらいます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>speaker</code></td>
+<td>StringArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-pigeon-pigeon-messages-remove-message'><code>/pigeon messages remove [message]</code></h3>
+<p>伝書鳩ちゃんにメッセージを削除してもらいます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>message</code></td>
+<td>StringArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-pigeon-pigeon-speaker-list'><code>/pigeon speaker list</code></h3>
+<p>伝書鳩ちゃんにスピーカーが誰がいるか聞きます。</p>
+<h3 id='commands-pigeon-pigeon-messages-list'><code>/pigeon messages list</code></h3>
+<p>伝書鳩ちゃんにメッセージが何があるか聞きます。</p>
+<h3 id='commands-pigeon-pigeon-broadcast-messageid'><code>/pigeon broadcast [messageId]</code></h3>
+<p>伝書鳩ちゃんにメッセージを配信してもらいます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>messageId</code></td>
+<td>IntegerArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-player'>player</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/player
+/player &lt;player&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Player.java">com.jaoafa.mymaid4.command.Cmd_Player</a></p>
+</blockquote>
+
+<p>プレイヤーの権限グループを取得します。</p>
+
+<ul>
+<li>エイリアスがあります: <code>group</code></li>
+</ul>
+<h3 id='commands-player-player'><code>/player</code></h3>
+<p>あなたの権限グループを表示します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-player-player-lt-player-gt'><code>/player &lt;player&gt;</code></h3>
+<p>指定されたプレイヤーの権限グループを表示します。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>player</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-selclick'>selclick</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/selclick
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Selclick.java">com.jaoafa.mymaid4.command.Cmd_Selclick</a></p>
+</blockquote>
+
+<p>SelClickの有効/無効を切り替えます。</p>
+<h3 id='commands-selclick-selclick'><code>/selclick</code></h3>
+<p>SelClickの有効/無効を切り替えます。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-sethome'>sethome</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/sethome
+/sethome [name]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_SetHome.java">com.jaoafa.mymaid4.command.Cmd_SetHome</a></p>
+</blockquote>
+
+<p>ホームを設定します。</p>
+
+<ul>
+<li>エイリアスがあります: <code>addhome</code></li>
+</ul>
+<h3 id='commands-sethome-sethome'><code>/sethome</code></h3>
+<p>デフォルトホームを設定します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-sethome-sethome-name'><code>/sethome [name]</code></h3>
+<p>指定された名前のホームを設定します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>StringArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-show'>show</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/show
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Show.java">com.jaoafa.mymaid4.command.Cmd_Show</a></p>
+</blockquote>
+
+<p>Hide状態を解除します。</p>
+<h3 id='commands-show-show'><code>/show</code></h3>
+<p>Hide状態を解除します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-skkcolor'>skkcolor</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/skkcolor
+/skkcolor &lt;color&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_SKKColor.java">com.jaoafa.mymaid4.command.Cmd_SKKColor</a></p>
+</blockquote>
+
+<p>チャット欄に表示される四角の色を変更します。</p>
+<h3 id='commands-skkcolor-skkcolor'><code>/skkcolor</code></h3>
+<p>チャット欄に表示される四角の色をリセットします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-skkcolor-skkcolor-lt-color-gt'><code>/skkcolor &lt;color&gt;</code></h3>
+<p>チャット欄に表示される四角の色を変更します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>color</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-spawn'>spawn</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/spawn
+/spawn true
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Spawn.java">com.jaoafa.mymaid4.command.Cmd_Spawn</a></p>
+</blockquote>
+
+<p>スポーン地点にテレポートします。</p>
+<h3 id='commands-spawn-spawn'><code>/spawn</code></h3>
+<p>ワールドのスポーン地点にテレポートします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h3 id='commands-spawn-spawn-true'><code>/spawn true</code></h3>
+<p>あなたのスポーン地点にテレポートします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+<h2 id='commands-tempmute'>tempmute</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/tempmute [changeTo]
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_TempMute.java">com.jaoafa.mymaid4.command.Cmd_TempMute</a></p>
+</blockquote>
+
+<p>一時的なミュートを実施します。運営のみ使用できます。</p>
+<h3 id='commands-tempmute-tempmute-changeto'><code>/tempmute [changeTo]</code></h3>
+<p>TempMuteをオン・オフします。指定しない場合、トグルで変更します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>changeTo</code></td>
+<td>BooleanArgument</td>
+<td>いいえ</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-test'>test</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/test version
+/test database
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Test.java">com.jaoafa.mymaid4.command.Cmd_Test</a></p>
+</blockquote>
+
+<p>MyMaidテストコマンド</p>
+<h3 id='commands-test-test-version'><code>/test version</code></h3>
+<p>MyMaidテストコマンド</p>
+<h3 id='commands-test-test-database'><code>/test database</code></h3>
+<p>MyMaidテストコマンド</p>
+<h2 id='commands-testment'>testment</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/testment &lt;message&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Testment.java">com.jaoafa.mymaid4.command.Cmd_Testment</a></p>
+</blockquote>
+
+<p>Jailの遺言を残します。jail testmentのエイリアスです。</p>
+<h3 id='commands-testment-testment-lt-message-gt'><code>/testment &lt;message&gt;</code></h3>
+<p>遺言を記録します。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>message</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h2 id='commands-wt'>wt</h2><div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>/wt &lt;worldName&gt;
+/wt &lt;worldName&gt; &lt;player&gt;
+</code></pre></div>
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+
+<p>他ワールドにテレポートします。</p>
+<h3 id='commands-wt-wt-lt-worldname-gt'><code>/wt &lt;worldName&gt;</code></h3>
+<p>指定したワールドにテレポートします。</p>
+
+<aside class="notice">
+このコマンドはプレイヤーからの実行のみに制限されています。
+</aside>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>worldName</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h3 id='commands-wt-wt-lt-worldname-gt-lt-player-gt'><code>/wt &lt;worldName&gt; &lt;player&gt;</code></h3>
+<p>指定したプレイヤーを指定したワールドにテレポートさせます。</p>
+
+<table><thead>
+<tr>
+<th>引数名</th>
+<th>種類</th>
+<th>必須か</th>
+<th>説明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>worldName</code></td>
+<td>StringArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+<tr>
+<td><code>player</code></td>
+<td>PlayerArgument</td>
+<td>はい</td>
+<td>説明なし</td>
+</tr>
+</tbody></table>
+<h1 id='events'>Events</h1>
+<p>MyMaid4 で実装されている機能（イベント）の一覧です。</p>
+<h3 id='events-wt-event_antilogincmd'>Event_AntiLoginCmd</h3>
+<p>ログインコマンドの使用制限を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_antiproblemcommand'>Event_AntiProblemCommand</h3>
+<p>迷惑コマンドの制限を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_antiproblemteleport'>Event_AntiProblemTeleport</h3>
+<p>極端に遠い場所へのテレポートを禁止します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_antitargetallentitycmd'>Event_AntiTargetAllEntityCmd</h3>
+<p>全てのエンティティをターゲットとするコマンドの使用を禁止します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_antiteleporttonewplayers'>Event_AntiTeleportToNewPlayers</h3>
+<p>新規プレイヤーへのテレポートを規制します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_antiteleporttospectator'>Event_AntiTeleportToSpectator</h3>
+<p>スペクテイタープレイヤーへのテレポートを禁止します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_antiwither'>Event_AntiWither</h3>
+<p>ウィザーの出現制限を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_antijaoium'>Event_Antijaoium</h3>
+<p>jaoium制限に関する処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_chatban'>Event_ChatBan</h3>
+<p>ChatBanに関する各種処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_clearselection'>Event_ClearSelection</h3>
+<p>走りながら空気をクリックして/selを実行します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_cmdlengthlimiter'>Event_CmdLengthLimiter</h3>
+<p>Default権限グループのプレイヤーによる100文字を超えるコマンドの実行を制限します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_commandsendam'>Event_CommandSendAM</h3>
+<p>実行されたコマンドをAdminとModeratorに通知します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_customjoinmessage'>Event_CustomJoinMessage</h3>
+<p>独自のログインメッセージを表示するように制御します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_dvnotspectator'>Event_DVNotSpectator</h3>
+<p>DefaultとVerified権限グループのプレイヤーによるスペクテイター変更を禁止します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_ded'>Event_Ded</h3>
+<p>dedコマンドに関する処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_disableconcretetransition'>Event_DisableConcreteTransition</h3>
+<p>コンクリートパウダーの変化を無効化します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_disablecoraltransition'>Event_DisableCoralTransition</h3>
+<p>サンゴの変化を無効化します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_disablerespawnanchor'>Event_DisableRespawnAnchor</h3>
+<p>リスポーンアンカーの爆発を無効化します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_eban'>Event_EBan</h3>
+<p>EBanに関する各種処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_explosion'>Event_Explosion</h3>
+<p>TNTなどの爆発時に額縁や絵画などが壊れないようにします。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_firstlogin'>Event_FirstLogin</h3>
+<p>初めてログインしたプレイヤーを通知します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_hide'>Event_Hide</h3>
+<p>hideコマンドに関する処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_history'>Event_History</h3>
+<p>historyコマンドに関する処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_jail'>Event_Jail</h3>
+<p>Jailに関する各種処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_loginsuccessful'>Event_LoginSuccessful</h3>
+<p>ログインに成功したことをデータベースに書き込みます。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_looking'>Event_Looking</h3>
+<p>lookingコマンドに関する処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_mcbanslogincheck'>Event_MCBansLoginCheck</h3>
+<p>ログイン時、MCBansのキャッシュデータベースを確認しGBanされていたりReputationが足りなくないかを確認します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_newplayerautoblmap'>Event_NewPlayerAutoBlMap</h3>
+<p>新規プレイヤーがログアウトした際にブロック編集情報を通知します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_playercheckprelogin'>Event_PlayerCheckPreLogin</h3>
+<p>プレイヤーログイン前に各種チェック等を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_protectionsandbox'>Event_ProtectionSandBox</h3>
+<p>SandBoxをRegular権限グループ未満のプレイヤーが編集できないように制限します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_skkcolor'>Event_SKKColor</h3>
+<p>チャット欄に表示される四角色に関する処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_teleportcmd'>Event_TeleportCmd</h3>
+<p>tpコマンドを受けてTeleportCommandEventを動作させます。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_tempmute'>Event_TempMute</h3>
+<p>tempmuteコマンドに関する処理を行います。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+<h3 id='events-wt-event_vote'>Event_Vote</h3>
+<p>各サーバリストサイトからの投票通知を受け取り、処理します。</p>
+
+<blockquote>
+<p>ソースコード: <a href="https://github.com/jaoafa/MyMaid4/blob/master/src/main/java/com/jaoafa/mymaid4/command/Cmd_Wt.java">com.jaoafa.mymaid4.command.Cmd_Wt</a></p>
+</blockquote>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="plaintext">Minecraft Command</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
